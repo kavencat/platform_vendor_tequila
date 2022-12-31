@@ -9,5 +9,6 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.tequila.version=$(TEQUILA_VERSION) \
     ro.tequila.display.version=$(TEQUILA_DISPLAY_VERSION) \
     ro.tequila.releasetype=$(TEQUILA_BUILDTYPE) \
+    ro.tequila.maintainer=$(TEQUILA_MAINTAINER) \
     ro.tequila.build.version=$(TEQUILA_PLATFORM_VERSION) \
     ro.modversion=$(TEQUILA_VERSION) \
