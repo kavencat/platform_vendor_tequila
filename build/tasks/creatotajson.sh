@@ -16,7 +16,7 @@
 #
 
 #$1=TARGET_DEVICE, $2=PRODUCT_OUT, $3=FILE_NAME $4=CHERISH_BASE_VERSION
-existingOTAjson=../vendor/miku/ota/wayne.json
+#existingOTAjson=../vendor/miku/ota/wayne.json
 output=$2/updates.json
 
 #tequila-tortilla-20230101-1838-OFFICIAL-wayne-DYNAMIC.zip
