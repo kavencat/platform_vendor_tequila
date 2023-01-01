@@ -19,7 +19,7 @@
 existingOTAjson=../vendor/miku/ota/wayne.json
 output=$2/updates.json
 
-#/home/linuxlite/aosp/out/target/product/wayne/EternityOS-v2.2-Flexible-wayne-13.0-20221114-1722-UNOFFICIAL.zip.sha256sum
+#tequila-tortilla-20230101-1838-OFFICIAL-wayne-DYNAMIC.zip
 
 echo $3
 
@@ -30,12 +30,12 @@ fi
 
 	#filename=$(find "$3" | cut -d "/" -f7)
 	filename=$3
-	BUILD_DATE=$(echo $filename | cut -d "-" -f6)
-	type=$(echo $filename | cut -d "-" -f7)
-	type=$(echo $type | cut -d "." -f1)
+	BUILD_DATE=$(echo $filename | cut -d "-" -f3)
+	type=$(echo $filename | cut -d "-" -f5)
+	#type=$(echo $type | cut -d "." -f1)
 	type=$(echo $type | tr "A-Z" "a-z")
 	version=$(echo $filename | cut -d "-" -f2)
-	device=$(echo $filename | cut -d "-" -f4)
+	device=$(echo $filename | cut -d "-" -f6)
 	url="https://sourceforge.net/projects/wayney/files/"$filename"/download"
 	buildprop=$2/system/build.prop
 	linenr=`grep -n "ro.system.build.date.utc" $buildprop | cut -d':' -f1`
