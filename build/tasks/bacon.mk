@@ -24,6 +24,7 @@ SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(TEQUILA_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(TEQUILA_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(TEQUILA_TARGET_PACKAGE).sha256sum
+	$(hide) source creatotajson.sh $(TEQUILA_BUILD) $(PRODUCT_OUT) tequila-$(TEQUILA_VERSION).zip $(TEQUILA_PLATFORM_VERSION)
 	@echo -e "                                                     "
 	@echo -e "       __                   ____      ____  _____    "
 	@echo -e "      / /____  ________  __/_/ /_____/ __ \/ ___/    "
