@@ -50,7 +50,7 @@ fi
 	echo '{
     "datetime": '$timestamp',
     "filename": "'$filename'",
-    "id": "'$id'",
+    "id": "'$sha256'",
     "romtype": '$type',
     "size": '$size',
     "url": "'$url'",
