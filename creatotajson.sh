@@ -19,11 +19,11 @@
 #existingOTAjson=../vendor/miku/ota/wayne.json
 output=$2/updates.json
 
-#tequila-tortilla-20230101-1838-OFFICIAL-wayne-DYNAMIC.zip
+#tequila-tortilla-20230101-1838-OFFICIAL-wayne-DYNAMIC.zip     "romtype": '$type',
 
 echo $3
 
-#cleanup old file
+#cleanup old file 
 if [ -f $output ]; then
 	rm $output
 fi
@@ -48,13 +48,16 @@ fi
 	BUILD_DAY=${BUILD_DATE:6:2}
 
 	echo '{
-    "datetime": '$timestamp',
-    "filename": "'$filename'",
-    "id": "'$sha256'",
-    "romtype": '$type',
-    "size": '$size',
-    "url": "'$url'",
-    "version": "'$version'"
+   "response": [
+      {
+		"datetime": '$timestamp',
+		"filename": "'$filename'",
+		"id": "'$sha256'",
+		"size": '$size',
+		"url": "'$url'",
+		"version": "'$version'"
+	   }
+   ]
 }
 ' >> $output
 
