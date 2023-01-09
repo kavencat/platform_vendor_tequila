@@ -18,5 +18,5 @@ PRODUCT_PACKAGES += \
     Recorder
     
 # GameSpace 
- PRODUCT_PACKAGES += \
-      GameSpace
+# PRODUCT_PACKAGES += \
+#      GameSpace
