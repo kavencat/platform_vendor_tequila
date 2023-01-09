@@ -56,7 +56,7 @@ fi
 		"size": '$size',
 		"url": "'$url'",
 		"version": "'$version'"
-	   }
+       }
    ]
 }
 ' >> $output
