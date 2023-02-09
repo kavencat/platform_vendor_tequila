@@ -23,3 +23,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # SystemUI plugins
 PRODUCT_PACKAGES += \
     QuickAccessWallet
+
+# tequilaPapers
+PRODUCT_PACKAGES += \
+    tequilaPapers
