@@ -4,11 +4,7 @@ $(call inherit-product, vendor/tequila/config/common.mk)
 # Aperture
 PRODUCT_PACKAGES += \
     Aperture
-
-# tequilaPapers
-PRODUCT_PACKAGES += \
-    tequilaPapers
-
+    
 # Launcher3
 PRODUCT_PACKAGES += \
     Launcher3QuickStep
