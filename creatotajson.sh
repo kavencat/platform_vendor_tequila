@@ -23,7 +23,7 @@ output=$2/updates.json
 
 echo $3
 
-#cleanup old file 
+#cleanup old file
 if [ -f $output ]; then
 	rm $output
 fi
@@ -36,7 +36,6 @@ fi
 	type=$(echo $type | tr "A-Z" "a-z")
 	version=$(echo $filename | cut -d "-" -f2)
 	device=$(echo $filename | cut -d "-" -f6)
-	url="https://sourceforge.net/projects/wayney/files/"$filename"/download"
 	buildprop=$2/system/build.prop
 	linenr=`grep -n "ro.system.build.date.utc" $buildprop | cut -d':' -f1`
 	timestamp=`sed -n $linenr'p' < $buildprop | cut -d'=' -f2`
@@ -46,6 +45,7 @@ fi
 	BUILD_YEAR=${BUILD_DATE:0:4}
 	BUILD_MONTH=${BUILD_DATE:4:2}
 	BUILD_DAY=${BUILD_DATE:6:2}
+	url="https://sourceforge.net/projects/wayney/files/"$BUILD_YEAR"-"$BUILD_MONTH"-"$BUILD_DAY"/"$filename"/download"
 
 	echo '{
    "response": [
