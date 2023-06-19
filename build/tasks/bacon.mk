@@ -34,3 +34,4 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e "                                                     "
 	@echo -e "Package: $(TEQUILA_TARGET_PACKAGE)"
 	@echo -e "Checksum: `cat $(TEQUILA_TARGET_PACKAGE).sha256sum | awk '{ print $$1 }'`"
+	$(hide) source ./vendor/tequila/creatotajson.sh $(TEQUILA_BUILD) $(PRODUCT_OUT) tequila-$(TEQUILA_VERSION).zip $(TEQUILA_PLATFORM_VERSION)
