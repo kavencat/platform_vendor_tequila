@@ -1,6 +1,6 @@
 TEQUILA_PLATFORM_VERSION = taco
 
-TEQUILA_BUILD_DATE := $(shell date -U +%Y%m%d-%H%M)
+TEQUILA_BUILD_DATE := $(shell date +%Y%m%d-%H%M)
 
 TEQUILA_BUILDTYPE ?= UNOFFICIAL
 
