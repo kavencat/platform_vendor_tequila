@@ -172,8 +172,15 @@ PRODUCT_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     BlackThemeOverlay \
+    NavigationBarModeGesturalOverlayFS \
     NetworkStackOverlay \
     Launcher3Overlay
+
+# Updater
+ifneq ($(filter OFFICIAL EXPERIMENTAL,$(TEQUILA_BUILDTYPE)),)
+PRODUCT_PACKAGES += \
+    Updater
+endif
 
 $(call inherit-product, vendor/tequila/config/fonts.mk)
 
