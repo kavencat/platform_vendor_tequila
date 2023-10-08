@@ -22,7 +22,7 @@ SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(TEQUILA_TARGET_PACKAGE)
+	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(TEQUILA_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(TEQUILA_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(TEQUILA_TARGET_PACKAGE).sha256sum
 	@echo -e "                                                     "
 	@echo -e "       __                   ____      ____  _____    "
@@ -34,3 +34,5 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e "                                                     "
 	@echo -e "Package: $(TEQUILA_TARGET_PACKAGE)"
 	@echo -e "Checksum: `cat $(TEQUILA_TARGET_PACKAGE).sha256sum | awk '{ print $$1 }'`"
+	$(hide) source ./vendor/tequila/creatotajson.sh $(TEQUILA_BUILD) $(PRODUCT_OUT) tequila-$(TEQUILA_VERSION).zip $(TEQUILA_PLATFORM_VERSION)
+	
