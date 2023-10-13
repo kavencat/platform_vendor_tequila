@@ -187,10 +187,8 @@ PRODUCT_PACKAGES += \
     Launcher3Overlay
 
 # Updater
-ifneq ($(filter OFFICIAL EXPERIMENTAL,$(TEQUILA_BUILDTYPE)),)
 PRODUCT_PACKAGES += \
     Updater
-endif
 
 $(call inherit-product, vendor/tequila/config/version.mk)
 $(call inherit-product, vendor/google/gms/config.mk)
