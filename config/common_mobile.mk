@@ -23,3 +23,7 @@ PRODUCT_PACKAGES += \
 # tequilaPapers
 PRODUCT_PACKAGES += \
     tequilaPapers
+    
+# Recorder
+PRODUCT_PACKAGES += \
+    Recorder
