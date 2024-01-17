@@ -20,6 +20,16 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
+# Blurs
+ifeq ($(TARGET_SUPPORTS_BLUR), true)
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1
+else
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.launcher.blur.appLaunch=0
+endif
+
 # Cloned app exemption
 PRODUCT_COPY_FILES += \
     vendor/tequila/prebuilt/common/etc/sysconfig/preinstalled-packages-platform-tequila-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-platform-tequila-product.xml
